@@ -72,7 +72,7 @@ const Products = () => {
         <h1>Products</h1>
         <button onClick={() => setOpen(true)}>Add New Products</button>
       </div>
-      <DataTable slug="products" columns={columns} rows={products} />
+      <DataTable hasAction={true} slug="products" columns={columns} rows={products} />
       {/* TEST THE API */}
 
       {/* {isLoading ? (

@@ -9,10 +9,15 @@ import Login from "./pages/login/Login";
 import "./styles/global.scss";
 import User from "./pages/user/User";
 import Product from "./pages/product/Product";
+import Orders from "./pages/orders/Orders";
+
 import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import { ErrorBoundary } from "react-error-boundary";
+import UnknownError from "./pages/errors/UnknownError";
+import NotFound from "./pages/errors/NotFound";
 
 
 const queryClient = new QueryClient();
@@ -62,15 +67,27 @@ function App() {
           path: "/products/:id",
           element: <Product />,
         },
+        {
+          path: "/orders",
+          element: <Orders />
+        }
       ],
     },
     {
       path: "/login",
       element: <Login />,
     },
+    {
+      path: "*",
+      element: <NotFound />
+    }
   ]);
 
-  return <RouterProvider router={router} />;
+  return <ErrorBoundary fallback={<UnknownError />}>
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  </ErrorBoundary>
 }
 
 export default App;

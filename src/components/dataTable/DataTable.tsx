@@ -11,6 +11,7 @@ type Props = {
   columns: GridColDef[];
   rows: object[];
   slug: string;
+  hasAction: boolean;
 };
 
 const DataTable = (props: Props) => {
@@ -33,6 +34,7 @@ const DataTable = (props: Props) => {
     //delete the item
     // mutation.mutate(id)
   };
+
 
   const actionColumn: GridColDef = {
     field: "action",
@@ -57,7 +59,7 @@ const DataTable = (props: Props) => {
       <DataGrid
         className="dataGrid"
         rows={props.rows}
-        columns={[...props.columns, actionColumn]}
+        columns={props.hasAction ? [...props.columns, actionColumn] : [...props.columns]}
         initialState={{
           pagination: {
             paginationModel: {
@@ -70,10 +72,12 @@ const DataTable = (props: Props) => {
           toolbar: {
             showQuickFilter: true,
             quickFilterProps: { debounceMs: 500 },
+            // csvOptions: { disableToolbarButton: true },
+            // printOptions: { disableToolbarButton: true },
           },
         }}
         pageSizeOptions={[5]}
-        checkboxSelection
+        checkboxSelection={props.hasAction}
         disableRowSelectionOnClick
         disableColumnFilter
         disableDensitySelector
