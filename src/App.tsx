@@ -18,7 +18,9 @@ import {
 import { ErrorBoundary } from "react-error-boundary";
 import UnknownError from "./pages/errors/UnknownError";
 import NotFound from "./pages/errors/NotFound";
-
+import { store } from "./store";
+import { Provider } from "react-redux";
+import Posts from "./pages/posts/Posts";
 
 const queryClient = new QueryClient();
 
@@ -70,6 +72,10 @@ function App() {
         {
           path: "/orders",
           element: <Orders />
+        },
+        {
+          path: "/posts",
+          element: <Posts />
         }
       ],
     },
@@ -83,11 +89,15 @@ function App() {
     }
   ]);
 
-  return <ErrorBoundary fallback={<UnknownError />}>
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  </ErrorBoundary>
+  return (
+    <Provider store={store}>
+      <ErrorBoundary fallback={<UnknownError />}>
+        <div>
+          <RouterProvider router={router} />
+        </div>
+      </ErrorBoundary>
+    </Provider>
+  );
 }
 
 export default App;
