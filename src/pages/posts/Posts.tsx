@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPosts, selectAllPosts, selectPostsStatus, selectPostsError } from '../../services/apis/posts';
 import type { AppDispatch } from '../../store';
+import SinglePost from '../../components/post/SinglePost';
+import "./posts.scss";
 
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 
@@ -26,14 +28,11 @@ const Posts = () => {
         return (
             <div>
                 <h1>Posts</h1>
-                <ul>
+                <div className='posts'>
                     {posts.map((post) => (
-                        <li key={post.id}>
-                            <h2>{post.title}</h2>
-                            <p>{post.body}</p>
-                        </li>
+                        <SinglePost {...post}></SinglePost>
                     ))}
-                </ul>
+                </div>
             </div>
         );
     } else if (status === 'failed') {

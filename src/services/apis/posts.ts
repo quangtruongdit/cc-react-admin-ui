@@ -17,16 +17,8 @@
  * the reducers and state. It also allows you to add extra reducers that can handle actions
  * from other sources
  */
-// Define a slice for posts data
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
-// Define an interface for the posts data
-interface IPost {
-  id: number;
-  userId?: number;
-  title: string;
-  body: string;
-}
+import IPost from '../../models/post';
 
 // Define an async action that fetches posts data from the API
 export const fetchPosts = createAsyncThunk<IPost[]>(
@@ -51,7 +43,7 @@ export const postsSlice = createSlice({
   },
   extraReducers: (builder) => {
     // Handle the pending state of the fetchPosts action
-    builder.addCase(fetchPosts.pending, (state, action) => {
+    builder.addCase(fetchPosts.pending, (state, _) => {
       state.status = 'loading';
     });
     // Handle the fulfilled state of the fetchPosts action

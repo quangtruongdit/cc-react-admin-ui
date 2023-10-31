@@ -43,7 +43,7 @@ export const menu = [
         id: 4,
         title: "Posts",
         url: "/posts",
-        icon: "post2.svg",
+        icon: "post.svg",
       },
     ],
   },
