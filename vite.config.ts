@@ -12,5 +12,6 @@ export default defineConfig({
     watch: {
       usePolling: true
     }
-  }
+  },
+  base: "/cc-react-admin-ui/"
 })
