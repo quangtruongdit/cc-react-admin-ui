@@ -27,19 +27,23 @@ const queryClient = new QueryClient();
 function App() {
   const Layout = () => {
     return (
-      <div className="main">
-        <Navbar />
-        <div className="container">
-          <div className="menuContainer">
-            <Menu />
-          </div>
-          <div className="contentContainer">
-            <QueryClientProvider client={queryClient}>
-              <Outlet />
-            </QueryClientProvider>
+      <div className="app">
+        <div className="main">
+          <Navbar />
+          <div className="container">
+            <div className="menuContainer">
+              <Menu />
+            </div>
+            <div className="contentContainer">
+              <QueryClientProvider client={queryClient}>
+                <Outlet />
+              </QueryClientProvider>
+            </div>
           </div>
         </div>
-        <Footer />
+        {/* <div className="footer">
+          <Footer />
+        </div> */}
       </div>
     );
   };
