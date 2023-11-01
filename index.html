@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/cc-react-admin-ui/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lama Dev Admin Dashboard" />
+    <title>React Admin Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        height: 100%; 
+        margin: 0; 
+        background-color: #2a3447;
+      }
+    
+      .main {
+        /* background-color: #2a3447; */
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+      }
+    
+      .main .row {
+        border: 1px dotted #384256;
+      }
+    
+      .main .row.header {
+        flex: 0 1 auto;
+      }
+    
+      .main .row.content {
+        flex: 1 1 auto;
+      }
+    
+      .main .row.footer {
+        /* background-color: #2a3447; */
+        flex: 0 1 70px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        text-align:center;  
+        padding-right: 10px;
+      }
+    </style>
+    <script type="module" crossorigin src="/cc-react-admin-ui/assets/index-6c75413c.js"></script>
+    <link rel="stylesheet" href="/cc-react-admin-ui/assets/index-c0171ba4.css">
+  </head>
+  <body>
+    <div class="main">
+      <div id="root" class="row content">
+      </div>
+      <div class="row footer">
+        <span>lamadmin</span>
+        <span>© Lama Dev Admin Dashboard</span>
+      </div>
+    </div>
+    
+  </body>
+</html>
