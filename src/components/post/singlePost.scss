@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 
-.singlePost{
+.singlePost {
     background-color: transparent;
     padding: 20px;
     border: 2px solid $soft-bg;
@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
 
-    .title{
+    .title {
         font-size: medium;
         font-weight: 500;
         color: $title-color;
@@ -19,8 +19,52 @@
         margin-bottom: 10px;
     }
 
-    .body{
+    .body {
         font-size: small;
         font-weight: 500;
+    }
+
+    .views {
+        display: flex;
+        /* Use Flexbox for the container */
+        justify-content: right;
+        /* Adjust this for alignment */
+        align-items: center;
+        /* Center items vertically */
+        // height: 100vh;
+        /* Optional: Adjust height */
+
+        /* Optional: Add spacing between items */
+        gap: 5px;
+
+        font-size: small;
+
+        font-weight: 500;
+
+        color: $text-color;
+    }
+
+    .tags {
+        margin-top: 10px;
+        text-align: right;
+        /* Align the tags to the right */
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: inline-flex;
+            /* Use inline-flex to align the items to the right */
+            gap: 8px;
+        }
+
+        .tag {
+            color: $text-color;
+            /* Light gray background */
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            /* Gray border */
+            border-radius: 4px;
+            font-size: small;
+        }
     }
 }

@@ -14,7 +14,7 @@
       color: $soft-color;
       text-transform: uppercase;
 
-      @include lg{
+      @include lg {
         display: none;
       }
     }
@@ -25,12 +25,13 @@
       gap: 10px;
       padding: 10px;
       border-radius: 5px;
+
       &:hover {
         background-color: $soft-bg;
       }
 
-      .listItemTitle{
-        @include lg{
+      .listItemTitle {
+        @include lg {
           display: none;
         }
       }

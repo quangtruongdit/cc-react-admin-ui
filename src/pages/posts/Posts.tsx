@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPosts, selectAllPosts, selectPostsStatus, selectPostsError } from '../../services/apis/posts';
 import type { AppDispatch } from '../../store';
@@ -30,7 +30,8 @@ const Posts = () => {
                 <h1>Posts</h1>
                 <div className='posts'>
                     {posts.map((post) => (
-                        <SinglePost {...post}></SinglePost>
+                        //Use key to prevent warning when render post items
+                        <SinglePost key={post.id} {...post}></SinglePost>
                     ))}
                 </div>
             </div>

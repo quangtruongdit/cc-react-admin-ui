@@ -1,11 +1,35 @@
+import { FormControlLabel, Switch } from "@mui/material";
 import "./navbar.scss";
+import { useTheme } from "../../providers/ThemeProvider";
+import { useEffect } from "react";
+import '../../styles/_dark-theme.scss';
+import '../../styles/_light-theme.scss';
 
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+
+  // Update the body class based on the theme
+  useEffect(() => {
+    if (theme.dark) {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+    } else {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((pre) => ({
+      dark: !pre.dark
+    }));
+  };
+
   return (
     <div className="navbar">
       <div className="logo">
         <img src="logo.svg" alt="" />
-        <span>lamadmin</span>
+        <span>React Admin</span>
       </div>
       <div className="icons">
         <img src="/search.svg" alt="" className="icon" />
@@ -15,12 +39,15 @@ const Navbar = () => {
           <img src="/notifications.svg" alt="" />
           <span>1</span>
         </div>
+        <FormControlLabel
+          control={
+            <Switch name={`${theme.dark ? "Dark" : "Light"}`} checked={theme.dark} onClick={toggleTheme}></Switch>
+          }
+          label={`${theme.dark ? "Dark" : "Light"}`}
+        />
         <div className="user">
-          <img
-            src="https://images.pexels.com/photos/11038549/pexels-photo-11038549.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-            alt=""
-          />
-          <span>Jane</span>
+          <img src="/logo.svg" alt="" className="icon" />
+          <span>My Account</span>
         </div>
         <img src="/settings.svg" alt="" className="icon" />
       </div>

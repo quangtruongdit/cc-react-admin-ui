@@ -113,6 +113,18 @@ export const menu = [
       },
     ],
   },
+  {
+    id: 6,
+    title: "demo",
+    listItems: [
+      {
+        id: 1,
+        title: "Demo",
+        url: "/demo",
+        icon: "chart.svg",
+      }
+    ],
+  },
 ];
 
 export const topDealUsers = [

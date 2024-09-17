@@ -24,9 +24,9 @@ import IPost from '../../models/post';
 export const fetchPosts = createAsyncThunk<IPost[]>(
   'posts/fetchPosts',
   async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const response = await fetch('https://dummyjson.com/posts');
     const data = await response.json();
-    return data;
+    return data.posts;
   }
 );
 

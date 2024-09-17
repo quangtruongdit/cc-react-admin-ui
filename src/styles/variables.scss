@@ -1,9 +1,16 @@
-// BG
-$main-bg: #2a3447;
-$soft-bg: #384256;
-$dark-bg: #222b3c;
 //TEXT
 $main-color: white;
-$soft-color: #ddd;
+$soft-color: #384256;
 $dark-color: #2a3447;
 $title-color: rgb(233, 132, 81);
+$text-color: rgba(134, 216, 247);
+
+$dark-main-bg: rgba(0, 0, 0, 0.724);
+$light-main-bg: rgba(71, 134, 126, 0.724);
+$light-main-color: #00000094;
+
+$main-bg: $dark-main-bg;
+// BG
+$soft-bg: #384256;
+$dark-bg: #222b3c;
+$container-bg: rgba(0, 0, 0, 0.724);
