@@ -1,3 +1,4 @@
+import DemoCSSComponent from "./components/css/DemoCSSComponent";
 import DemoClassComponent from "./components/DemoClassComponent";
 import DemoControlledComponent from "./components/DemoControlledComponent";
 import DemoFuncAsChildComponent from "./components/DemoFuncAsChildComponent";
@@ -19,6 +20,8 @@ const DemoPage = () => {
             {/* Controlled and uncontrolled component */}
             <DemoControlledComponent />
             <DemoUncontrolledComponent />
+            {/* Demo css */}
+            <DemoCSSComponent />
         </>
     );
 }
