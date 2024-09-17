@@ -25,6 +25,8 @@ import { store } from "./store";
 import { Provider } from "react-redux";
 import DemoPage from "./pages/demo/DemoPage";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import { AuthProvider } from "./providers/AuthProvider";
+import AuthenticatedRoute from "./components/auth/AuthenticationRoute";
 
 const queryClient = new QueryClient();
 
@@ -59,31 +61,31 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <AuthenticatedRoute element={<Home />} />,
         },
         {
           path: "/users",
-          element: <Users />,
+          element: <AuthenticatedRoute element={<Users />} />,
         },
         {
           path: "/products",
-          element: <Products />,
+          element: <AuthenticatedRoute element={<Products />} />,
         },
         {
           path: "/users/:id",
-          element: <User />,
+          element: <AuthenticatedRoute element={<User />} />,
         },
         {
           path: "/products/:id",
-          element: <Product />,
+          element: <AuthenticatedRoute element={<Product />} />,
         },
         {
           path: "/orders",
-          element: <Orders />
+          element: <AuthenticatedRoute element={<Orders />} />,
         },
         {
           path: "/posts",
-          element: <Posts />
+          element: <AuthenticatedRoute element={<Posts />} />,
         },
         {
           path: "/demo",
@@ -109,9 +111,11 @@ function App() {
     <Provider store={store}>
       <ErrorBoundary fallback={<UnknownError />}>
         <ThemeProvider>
-          <div>
-            <RouterProvider router={router} />
-          </div>
+          <AuthProvider>
+            <div>
+              <RouterProvider router={router} />
+            </div>
+          </AuthProvider>
         </ThemeProvider>
       </ErrorBoundary>
     </Provider>
