@@ -1,0 +1,47 @@
+/* Navbar.css */
+.demoNavbar {
+    display: flex;
+    gap: 20px;
+    /* Adds space between links */
+    background-color: #f8f9fa;
+    /* Light background for the navbar */
+    padding: 10px 20px;
+    /* Some padding for spacing */
+}
+
+.demoNavbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Default hover effect for all links */
+.demoNavbar a:hover {
+    background-color: #e2e6ea;
+    /* Slightly darker background on hover */
+}
+
+/* Active link styling */
+.active-link {
+    color: white;
+    background-color: #007bff;
+    /* Blue background for active link */
+}
+
+/* Pending link styling (e.g., while loading) */
+.pending-link {
+    color: #ffc107;
+    /* Yellow color for pending link */
+    background-color: #fff3cd;
+    /* Light yellow background */
+}
+
+/* Transitioning link styling */
+.transitioning-link {
+    color: #17a2b8;
+    /* Light blue color for transitioning link */
+    background-color: #d1ecf1;
+    /* Light cyan background */
+}

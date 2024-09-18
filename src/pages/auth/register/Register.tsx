@@ -104,6 +104,7 @@ const Register = () => {
                 </div>
 
                 <button type="submit" className="submit-btn">Register</button>
+
                 <div
                     style={{
                         marginTop: '10px',
@@ -112,6 +113,7 @@ const Register = () => {
                     }}
                 >
                     <Link to="/login">Back</Link>
+
                 </div>
             </form>
         </Auth>

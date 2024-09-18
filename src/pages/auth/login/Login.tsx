@@ -3,11 +3,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-//Login page css
 import './Login.scss';
 import Auth from '../Auth';
 
-//Login form validation with Yup
 const schema = yup.object({
   email: yup
     .string()
@@ -19,13 +17,11 @@ const schema = yup.object({
     .required('Password is required'),
 }).required();
 
-//Login Form Input Interface
 interface IFormInput {
   email: string;
   password: string;
 }
 
-// Login page component
 const Login = () => {
   const {
     register,
@@ -84,12 +80,12 @@ const Login = () => {
         </div>
         <div className="forgotpassword-link">
           {/* <button
-            type="button"
-            className="forgotpassword-btn"
-            onClick={() => navigate('/forgotpassword')}
-          >
-            Forgot-Password
-          </button> */}
+        type="button"
+        className="forgotpassword-btn"
+        onClick={() => navigate('/forgotpassword')}
+      >
+        Forgot-Password
+      </button> */}
           <Link to={'/forgotpassword'}>Forgot-Password</Link>
         </div>
       </form>

@@ -78,3 +78,26 @@
         }
     }
 }
+
+/* Active link styling */
+.active-link {
+    color: white;
+    background-color: #007bff;
+    /* Blue background for active link */
+}
+
+/* Pending link styling (e.g., while loading) */
+.pending-link {
+    color: #ffc107;
+    /* Yellow color for pending link */
+    background-color: #fff3cd;
+    /* Light yellow background */
+}
+
+/* Transitioning link styling */
+.transitioning-link {
+    color: #17a2b8;
+    /* Light blue color for transitioning link */
+    background-color: #d1ecf1;
+    /* Light cyan background */
+}
