@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 interface Theme {
     dark: boolean;
@@ -21,6 +21,10 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const [theme, setTheme] = useState<Theme>(defaultTheme);
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme.dark ? 'dark' : '');
+    }, [theme]);
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>

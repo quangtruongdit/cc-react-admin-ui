@@ -1,7 +1,40 @@
 @import "./variables.scss";
 @import "./responsive.scss";
-@import "./light-theme.scss";
-@import "./dark-theme.scss";
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-text-color);
+}
+
+p {
+  color: var(--secondary-text-color);
+}
+
+span {
+  color: var(--secondary-text-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
 
 * {
   margin: 0;
@@ -18,17 +51,9 @@ a {
 //   background-color: $main-bg;
 // }
 
-.light-theme {
-  background-color: $light-main-bg;
-}
-
-.dark-theme {
-  background-color: $dark-main-bg;
-}
-
 .main {
   font-family: "Inter", sans-serif;
-  // background-color: $main-bg;
+  // background-color: $dark-main-bg;
   color: $main-color;
   height: 100%;
 }

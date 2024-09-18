@@ -1,23 +1,8 @@
 import { FormControlLabel, Switch } from "@mui/material";
 import "./navbar.scss";
 import { useTheme } from "../../providers/ThemeProvider";
-import { useEffect } from "react";
-import '../../styles/_dark-theme.scss';
-import '../../styles/_light-theme.scss';
-
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
-
-  // Update the body class based on the theme
-  useEffect(() => {
-    if (theme.dark) {
-      document.body.classList.add('dark-theme');
-      document.body.classList.remove('light-theme');
-    } else {
-      document.body.classList.add('light-theme');
-      document.body.classList.remove('dark-theme');
-    }
-  }, [theme]);
 
   const toggleTheme = () => {
     setTheme((pre) => ({

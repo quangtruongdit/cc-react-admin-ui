@@ -1,3 +1,22 @@
+// Define default variables for light theme
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --primary-text-color: #333333;
+    --secondary-text-color: #666666;
+    --primary-color: #007bff;
+}
+
+// Define variables for dark theme
+[data-theme="dark"] {
+    --background-color: #333333;
+    --text-color: #ffffff;
+    --primary-text-color: #cccccc;
+    --secondary-text-color: #aaaaaa;
+    --primary-color: #1a73e8;
+}
+
+
 //TEXT
 $main-color: white;
 $soft-color: #384256;
@@ -5,8 +24,8 @@ $dark-color: #2a3447;
 $title-color: rgb(233, 132, 81);
 $text-color: rgba(134, 216, 247);
 
-$dark-main-bg: rgba(0, 0, 0, 0.724);
-$light-main-bg: rgba(71, 134, 126, 0.724);
+$dark-main-bg: black;
+$light-main-bg: white;
 $light-main-color: #00000094;
 
 $main-bg: $dark-main-bg;
