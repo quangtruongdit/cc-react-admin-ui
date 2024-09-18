@@ -113,3 +113,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, pr
 export default ProductCard;
 
 ```
+
+# Inline css
+
+```js
+    <div
+        style={{
+            marginTop: '10px',
+            display: 'flex', // Use flexbox
+            justifyContent: 'flex-end', // Align to the right
+        }}>
+        <Link to="/login">Back</Link>
+    </div>
+```

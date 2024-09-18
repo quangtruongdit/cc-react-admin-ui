@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Register.scss';
 import Auth from '../Auth';
 
@@ -104,6 +104,15 @@ const Register = () => {
                 </div>
 
                 <button type="submit" className="submit-btn">Register</button>
+                <div
+                    style={{
+                        marginTop: '10px',
+                        display: 'flex', // Use flexbox
+                        justifyContent: 'flex-end', // Align to the right
+                    }}
+                >
+                    <Link to="/login">Back</Link>
+                </div>
             </form>
         </Auth>
     );

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './ForgotPassword.scss'; // Optional: Your custom styles
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Auth from '../Auth';
 
 // Define the shape of the form's initial values
@@ -32,31 +32,42 @@ const ForgotPassword: React.FC = () => {
 
     return (
         <Auth title={'Forgot Password'} subtitle={'Enter your email to reset password'}>
-            <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={handleSubmit}
-            >
-                {({ isSubmitting }) => (
-                    <Form className="forgot-password-form">
-                        <div className="form-group">
-                            <label htmlFor="email">Email:</label>
-                            <Field
-                                type="email"
-                                id="email"
-                                name="email"
-                                className="form-control"
-                                placeholder="Enter your email"
-                            />
-                            <ErrorMessage name="email" component="div" className="error-message" />
-                        </div>
+            <div >
+                <Formik
+                    initialValues={initialValues}
+                    validationSchema={validationSchema}
+                    onSubmit={handleSubmit}
+                >
+                    {({ isSubmitting }) => (
+                        <Form className="forgot-password-form">
+                            <div className="form-group">
+                                <label htmlFor="email">Email:</label>
+                                <Field
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    className="form-control"
+                                    placeholder="Enter your email"
+                                />
+                                <ErrorMessage name="email" component="div" className="error-message" />
+                            </div>
 
-                        <button type="submit" className="submit-button" disabled={isSubmitting}>
-                            {isSubmitting ? 'Sending...' : 'Send Reset Link'}
-                        </button>
-                    </Form>
-                )}
-            </Formik>
+                            <button type="submit" className="submit-button" disabled={isSubmitting}>
+                                {isSubmitting ? 'Sending...' : 'Send Reset Link'}
+                            </button>
+                        </Form>
+                    )}
+                </Formik>
+                <div
+                    style={{
+                        marginTop: '10px',
+                        display: 'flex', // Use flexbox
+                        justifyContent: 'flex-end', // Align to the right
+                    }}
+                >
+                    <Link to="/login">Back</Link>
+                </div>
+            </div>
         </Auth>
     );
 };
