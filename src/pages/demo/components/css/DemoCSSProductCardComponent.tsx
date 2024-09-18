@@ -26,3 +26,5 @@ const DempCSSProductCard: React.FC<DemoProductCardProps> = ({ image, title, desc
 };
 
 export default DempCSSProductCard;
+
+

@@ -82,6 +82,15 @@ const Login = () => {
             Register
           </button>
         </div>
+        <div className="forgotpassword-link">
+          <button
+            type="button"
+            className="forgotpassword-btn"
+            onClick={() => navigate('/forgotpassword')}
+          >
+            Forgot-Password
+          </button>
+        </div>
       </form>
     </Auth>
   );

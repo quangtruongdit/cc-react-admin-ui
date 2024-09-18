@@ -27,6 +27,7 @@ import DemoPage from "./pages/demo/DemoPage";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import { AuthProvider } from "./providers/AuthProvider";
 import AuthenticatedRoute from "./components/auth/AuthenticationRoute";
+import ForgotPassword from "./pages/auth/forgotpassword/ForgotPassword";
 
 const queryClient = new QueryClient();
 
@@ -100,6 +101,10 @@ function App() {
     {
       path: "/register",
       element: <Register />,
+    },
+    {
+      path: "/forgotpassword",
+      element: <ForgotPassword />,
     },
     {
       path: "*",

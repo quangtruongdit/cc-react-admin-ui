@@ -13,5 +13,5 @@ export default defineConfig({
       usePolling: true
     }
   },
-  base: "/cc-react-admin-ui/"
+  // base: "/cc-react-admin-ui/"
 })

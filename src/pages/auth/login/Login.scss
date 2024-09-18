@@ -80,8 +80,28 @@
 
     .register-link {
         text-align: right;
+        margin-bottom: 1rem;
 
         .register-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: white;
+            color: #007bff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.897);
+            }
+        }
+    }
+
+    .forgotpassword-link {
+        text-align: right;
+
+        .forgotpassword-btn {
             width: 100%;
             padding: 0.75rem;
             background-color: white;
