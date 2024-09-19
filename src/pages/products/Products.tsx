@@ -3,7 +3,8 @@ import "./products.scss";
 import DataTable from "../../components/dataTable/DataTable";
 import Add from "../../components/add/Add";
 import { GridColDef } from "@mui/x-data-grid";
-import { products } from "../../data";
+import useProducts from "../../hooks/useProducts";
+
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
@@ -56,15 +57,10 @@ const columns: GridColDef[] = [
 const Products = () => {
   const [open, setOpen] = useState(false);
 
-  // TEST THE API
+  const { products, loading, error } = useProducts('categoryId');
 
-  // const { isLoading, data } = useQuery({
-  //   queryKey: ["allproducts"],
-  //   queryFn: () =>
-  //     fetch("http://localhost:8800/api/products").then(
-  //       (res) => res.json()
-  //     ),
-  // });
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div className="products">
@@ -73,13 +69,6 @@ const Products = () => {
         <button onClick={() => setOpen(true)}>Add New Products</button>
       </div>
       <DataTable hasAction={true} slug="products" columns={columns} rows={products} />
-      {/* TEST THE API */}
-
-      {/* {isLoading ? (
-        "Loading..."
-      ) : (
-        <DataTable slug="products" columns={columns} rows={data} />
-      )} */}
       {open && <Add slug="product" columns={columns} setOpen={setOpen} />}
     </div>
   );
