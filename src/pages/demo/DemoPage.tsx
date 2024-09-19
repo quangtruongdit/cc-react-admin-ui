@@ -24,7 +24,7 @@ const DemoPage = () => {
             {/* Demo css */}
             <DemoCSSComponent />
             {/* Demo routing */}
-            <DemoRoutingWithNavlink />
+            {/* <DemoRoutingWithNavlink /> */}
         </>
     );
 }
