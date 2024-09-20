@@ -8,6 +8,7 @@ import DemoUncontrolledComponent from "./components/DemoUncontrolledComponent";
 import DemoHooksAnimation from "./hooks/DemoHooksAnimation";
 import DemoHooksAnimation2 from "./hooks/DemoHooksAnimation2";
 import DemoHooksDOM from "./hooks/DemoHooksDOM";
+import DemoHooksDeferredValue from "./hooks/DemoHooksUseDefer";
 import DemoHooksUseId from "./hooks/DemoHooksUseId";
 import DemoHooksNonReactWidget from "./hooks/DemoHooksWidgetFromDifferentUILibrary";
 import DemoJqueryComponent from "./hooks/DemoHooksWithNonReactCode";
@@ -40,6 +41,7 @@ const DemoPage = () => {
             {/* <DemoHooksNonReactWidget /> */}
 
             <DemoHooksUseId />
+            <DemoHooksDeferredValue />
         </>
     );
 }
