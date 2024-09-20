@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPosts, selectAllPosts, selectPostsStatus, selectPostsError } from '../../services/apis/posts';
 import type { AppDispatch } from '../../store';
