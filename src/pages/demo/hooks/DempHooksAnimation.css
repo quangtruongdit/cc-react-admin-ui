@@ -1,0 +1,28 @@
+/* Styling for the box */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Animation for moving the box */
+.animate {
+    animation: move 1s ease-in-out;
+}
+
+/* Keyframes for the animation */
+@keyframes move {
+    0% {
+        left: 0px;
+    }
+
+    50% {
+        left: 200px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}

@@ -5,6 +5,7 @@ import DemoFuncAsChildComponent from "./components/DemoFuncAsChildComponent";
 import DemoFuncAsPropComponent from "./components/DemoFuncAsPropComponent";
 import DemoLiftingStateUpComponent from "./components/DemoLiftingStateUpComponent";
 import DemoUncontrolledComponent from "./components/DemoUncontrolledComponent";
+import DempHooksAnimation from "./hooks/DemoHooksAnimation";
 import DemoHooksDOM from "./hooks/DemoHooksDom";
 import DemoRoutingWithNavlink from "./routing/DemoRoutingWithNavlink";
 import DemoLocalStateCounter from "./state/DemoLocalState";
@@ -27,6 +28,7 @@ const DemoPage = () => {
             {/* Demo routing */}
             {/* <DemoRoutingWithNavlink /> */}
             <DemoHooksDOM />
+            <DempHooksAnimation />
         </>
     );
 }
