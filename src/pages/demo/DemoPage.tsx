@@ -6,8 +6,10 @@ import DemoFuncAsPropComponent from "./components/DemoFuncAsPropComponent";
 import DemoLiftingStateUpComponent from "./components/DemoLiftingStateUpComponent";
 import DemoUncontrolledComponent from "./components/DemoUncontrolledComponent";
 import DempHooksAnimation from "./hooks/DemoHooksAnimation";
+import DempHooksAnimation2 from "./hooks/DemoHooksAnimation2";
 import DemoHooksDOM from "./hooks/DemoHooksDom";
-import DemoRoutingWithNavlink from "./routing/DemoRoutingWithNavlink";
+import DemoJqueryComponent from "./hooks/DemoHooksWithNonReactCode";
+// import DemoRoutingWithNavlink from "./routing/DemoRoutingWithNavlink";
 import DemoLocalStateCounter from "./state/DemoLocalState";
 
 const DemoPage = () => {
@@ -29,6 +31,9 @@ const DemoPage = () => {
             {/* <DemoRoutingWithNavlink /> */}
             <DemoHooksDOM />
             <DempHooksAnimation />
+            <DempHooksAnimation2 />
+
+            <DemoJqueryComponent />
         </>
     );
 }
