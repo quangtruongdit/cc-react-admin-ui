@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './DemoHooksAnimation2.css'; // For CSS animations
 
-const DempHooksAnimation2: React.FC = () => {
+const DemoHooksAnimation2: React.FC = () => {
     const [size, setSize] = useState(100); // Initial size of the box
     const [targetSize, setTargetSize] = useState(size); // Target size for the animation
     const [isAnimating, setIsAnimating] = useState(false);
@@ -57,4 +57,4 @@ const DempHooksAnimation2: React.FC = () => {
     );
 };
 
-export default DempHooksAnimation2;
+export default DemoHooksAnimation2;

@@ -5,9 +5,10 @@ import DemoFuncAsChildComponent from "./components/DemoFuncAsChildComponent";
 import DemoFuncAsPropComponent from "./components/DemoFuncAsPropComponent";
 import DemoLiftingStateUpComponent from "./components/DemoLiftingStateUpComponent";
 import DemoUncontrolledComponent from "./components/DemoUncontrolledComponent";
-import DempHooksAnimation from "./hooks/DemoHooksAnimation";
-import DempHooksAnimation2 from "./hooks/DemoHooksAnimation2";
-import DemoHooksDOM from "./hooks/DemoHooksDom";
+import DemoHooksAnimation from "./hooks/DemoHooksAnimation";
+import DemoHooksAnimation2 from "./hooks/DemoHooksAnimation2";
+import DemoHooksDOM from "./hooks/DemoHooksDOM";
+import DemoHooksNonReactWidget from "./hooks/DemoHooksWidgetFromDifferentUILibrary";
 import DemoJqueryComponent from "./hooks/DemoHooksWithNonReactCode";
 // import DemoRoutingWithNavlink from "./routing/DemoRoutingWithNavlink";
 import DemoLocalStateCounter from "./state/DemoLocalState";
@@ -16,24 +17,26 @@ const DemoPage = () => {
     return (
         <>
             {/* Demo components */}
-            <DemoClassComponent />
+            {/* <DemoClassComponent />
             <DemoFuncAsPropComponent />
             <DemoFuncAsChildComponent />
-            <DemoLiftingStateUpComponent />
+            <DemoLiftingStateUpComponent /> */}
             {/* Demo State */}
-            <DemoLocalStateCounter />
+            {/* <DemoLocalStateCounter /> */}
             {/* Controlled and uncontrolled component */}
-            <DemoControlledComponent />
-            <DemoUncontrolledComponent />
+            {/* <DemoControlledComponent /> */}
+            {/* <DemoUncontrolledComponent /> */}
             {/* Demo css */}
-            <DemoCSSComponent />
+            {/* <DemoCSSComponent /> */}
             {/* Demo routing */}
             {/* <DemoRoutingWithNavlink /> */}
-            <DemoHooksDOM />
-            <DempHooksAnimation />
-            <DempHooksAnimation2 />
+            {/* <DemoHooksDOM />
+            <DemoHooksAnimation />
+            <DemoHooksAnimation2 />
 
-            <DemoJqueryComponent />
+            <DemoJqueryComponent /> */}
+
+            {/* <DemoHooksNonReactWidget /> */}
         </>
     );
 }

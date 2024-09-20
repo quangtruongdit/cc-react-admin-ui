@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './DempHooksAnimation.css'; // We will use this for CSS animations
+import './DemoHooksAnimation.css'; // We will use this for CSS animations
 
-const DempHooksAnimation: React.FC = () => {
+const DemoHooksAnimation: React.FC = () => {
     // State to manage the animation trigger
     const [isAnimating, setIsAnimating] = useState(false);
 
@@ -36,4 +36,4 @@ const DempHooksAnimation: React.FC = () => {
     );
 };
 
-export default DempHooksAnimation;
+export default DemoHooksAnimation;
