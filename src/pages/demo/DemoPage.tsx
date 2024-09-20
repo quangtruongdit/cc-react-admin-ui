@@ -8,6 +8,7 @@ import DemoUncontrolledComponent from "./components/DemoUncontrolledComponent";
 import DemoHooksAnimation from "./hooks/DemoHooksAnimation";
 import DemoHooksAnimation2 from "./hooks/DemoHooksAnimation2";
 import DemoHooksDOM from "./hooks/DemoHooksDOM";
+import DemoHooksUseId from "./hooks/DemoHooksUseId";
 import DemoHooksNonReactWidget from "./hooks/DemoHooksWidgetFromDifferentUILibrary";
 import DemoJqueryComponent from "./hooks/DemoHooksWithNonReactCode";
 // import DemoRoutingWithNavlink from "./routing/DemoRoutingWithNavlink";
@@ -37,6 +38,8 @@ const DemoPage = () => {
             <DemoJqueryComponent /> */}
 
             {/* <DemoHooksNonReactWidget /> */}
+
+            <DemoHooksUseId />
         </>
     );
 }
