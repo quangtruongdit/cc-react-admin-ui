@@ -1,3 +1,4 @@
+import DemoErrorBoundaryComponent from "./advances/DemoErrorBoundary";
 import DemoCSSComponent from "./components/css/DemoCSSComponent";
 import DemoClassComponent from "./components/DemoClassComponent";
 import DemoControlledComponent from "./components/DemoControlledComponent";
@@ -47,7 +48,11 @@ const DemoPage = () => {
 
             {/* <DemoUseDebugValue /> */}
 
-            <DemoHooksUseSyncExternalStore />
+            {/* <DemoHooksUseSyncExternalStore /> */}
+
+            {/* Advance */}
+
+            <DemoErrorBoundaryComponent />
         </>
     );
 }
