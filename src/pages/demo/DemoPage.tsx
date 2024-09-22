@@ -1,4 +1,5 @@
 import DemoErrorBoundaryComponent from "./advances/DemoErrorBoundary";
+import DemoProfiler from "./advances/DemoProfiler";
 import DemoCSSComponent from "./components/css/DemoCSSComponent";
 import DemoClassComponent from "./components/DemoClassComponent";
 import DemoControlledComponent from "./components/DemoControlledComponent";
@@ -52,7 +53,9 @@ const DemoPage = () => {
 
             {/* Advance */}
 
-            <DemoErrorBoundaryComponent />
+            {/* <DemoErrorBoundaryComponent /> */}
+
+            {/* <DemoProfiler children={<DemoCSSComponent />} /> */}
         </>
     );
 }
