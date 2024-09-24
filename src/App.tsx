@@ -21,7 +21,7 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
-import { store } from "./store";
+import store from "./redux/store";
 import { Provider } from "react-redux";
 import DemoPage from "./pages/demo/DemoPage";
 import { ThemeProvider } from "./providers/ThemeProvider";

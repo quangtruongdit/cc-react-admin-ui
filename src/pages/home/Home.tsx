@@ -1,10 +1,8 @@
-import React, { Suspense } from "react";
-// import BarChartBox from "../../components/barChartBox/BarChartBox";
+import React, { Suspense, useEffect } from "react";
 import BigChartBox from "../../components/bigChartBox/BigChartBox";
-// import ChartBox from "../../components/chartBox/ChartBox";
 import PieChartBox from "../../components/pieCartBox/PieChartBox";
 import TopBox from "../../components/topBox/TopBox";
-
+import { dashboardDataRequest } from "../../redux/slices/dashboardSlice";
 const ChartBox = React.lazy(() => import('../../components/chartBox/ChartBox'));
 const BarChartBox = React.lazy(() => import('../../components/barChartBox/BarChartBox'));
 
@@ -17,8 +15,27 @@ import {
   chartBoxUser,
 } from "../../data";
 import "./home.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store/reducer";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector(
+    (state: RootState) => state.dashboard
+  );
+
+  useEffect(() => {
+    dispatch(dashboardDataRequest());
+  }, [dispatch]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="home">
       <div className="box box1">
@@ -42,12 +59,12 @@ const Home = () => {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <div className="box box5">
-          <ChartBox {...chartBoxConversion} />
+          <ChartBox {...data?.salesDataConversion} />
         </div>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <div className="box box6">
-          <ChartBox {...chartBoxRevenue} />
+          <ChartBox {...data?.salesDataRevenue} />
         </div>
       </Suspense>
       <div className="box box7">
@@ -55,7 +72,7 @@ const Home = () => {
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         <div className="box box8">
-          <BarChartBox {...barChartBoxVisit} />
+          <BarChartBox {...data?.salesDataVisit} />
         </div>
       </Suspense>
 
@@ -64,24 +81,23 @@ const Home = () => {
           <BarChartBox {...barChartBoxRevenue} />
         </div>
       </Suspense>
-
     </div>
   );
 };
 
 
-const fetchAboutData = (): Promise<string> => {
+const fetchUser = (): Promise<typeof chartBoxUser> => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve("This data is fetched from the API.");
+      resolve(chartBoxUser);
     }, 2000); // Simulating a 2-second delay
   });
 };
 
 const LazyChartBoxUser = React.lazy(async () => {
-  const data = await fetchAboutData(); // Simulate fetching data from API
+  const data = await fetchUser();
   return {
-    default: () => <div><ChartBox {...chartBoxUser} /></div>,
+    default: () => <div><ChartBox {...data} /></div>,
   };
 });
 

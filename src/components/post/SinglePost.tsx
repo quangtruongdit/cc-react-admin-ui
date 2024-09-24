@@ -1,7 +1,3 @@
-import { ErrorBoundary } from "react-error-boundary";
-import "./singlePost.scss";
-import UnknownError from "../../pages/errors/UnknownError";
-
 type IProps = {
     id: number;
     userId?: number;

@@ -15,7 +15,7 @@ interface UseAddFormReturn {
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const useAddProduct = ({ slug, columns, setOpen }: UseAddFormProps): UseAddFormReturn => {
+const useAddProduct = ({ columns, setOpen }: UseAddFormProps): UseAddFormReturn => {
     const [formData, setFormData] = useState<{ [key: string]: any }>({});
 
     const filteredColumns = columns.filter(column => column.field !== 'id' && column.field !== 'img');
