@@ -335,7 +335,6 @@ export const barChartBoxVisit = {
   ],
 };
 
-
 export const userRows = [
   {
     id: 1,
