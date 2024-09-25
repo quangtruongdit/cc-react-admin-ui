@@ -36,7 +36,7 @@ const Login = () => {
   const onSubmit = (data: IFormInput) => {
     console.log('Form Submitted', data);
     // handle login logic here (e.g., API call)
-    navigate('/');
+    navigate('/verify');
   };
 
   return (

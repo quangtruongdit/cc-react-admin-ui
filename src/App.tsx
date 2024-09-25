@@ -28,6 +28,7 @@ import { ThemeProvider } from "./providers/ThemeProvider";
 import { AuthProvider } from "./providers/AuthProvider";
 import AuthenticatedRoute from "./components/auth/AuthenticationRoute";
 import ForgotPassword from "./pages/auth/forgotpassword/ForgotPassword";
+import VerifyCode from "./pages/auth/verify/VerifyCode";
 
 const queryClient = new QueryClient();
 
@@ -105,6 +106,10 @@ function App() {
     {
       path: "/forgotpassword",
       element: <ForgotPassword />,
+    },
+    {
+      path: "/verify",
+      element: <VerifyCode />,
     },
     {
       path: "*",
