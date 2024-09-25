@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 // import { matchRoutes } from 'react-router-config';
 // import proxy from 'express-http-proxy';
+import cors from 'cors';
 
 import { orders } from './data';
 
@@ -17,6 +18,10 @@ const app = express();
 //         }
 //     })
 // );
+
+app.use(cors({
+    origin: 'http://localhost:8000',
+}));
 
 // Serve static files
 // app.use(express.static('public'));

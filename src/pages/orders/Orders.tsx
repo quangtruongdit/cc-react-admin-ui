@@ -1,7 +1,8 @@
 import DataTable from '../../components/dataTable/DataTable';
 import { GridColDef } from '@mui/x-data-grid';
-import { useOrders } from '../../hooks/useOrders';
+// import { useOrders } from '../../hooks/useOrders';
 import './Orders.scss';
+import { useGetOrdersQuery } from '../../services/apis/orders';
 
 const columns: GridColDef[] = [
     { field: "id", headerName: "ID", width: 90 },
@@ -46,17 +47,19 @@ const columns: GridColDef[] = [
 ];
 
 const Orders = () => {
-    const { orders, loading, error } = useOrders(); // Use the hook for orders logic
+    // const { orders, loading, error } = useOrders(); // Use the hook for orders logic
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    const { data: orders, error, isLoading } = useGetOrdersQuery();
+
+    if (isLoading) return <p>Loading...</p>;
+    if (error) return <p>Error</p>;
 
     return (
         <div className="orders">
             <div className='info'>
                 <h1>Orders</h1>
             </div>
-            <DataTable hasAction={false} slug='' columns={columns} rows={orders}></DataTable>
+            <DataTable hasAction={false} slug='' columns={columns} rows={orders ?? []}></DataTable>
         </div>
     );
 };
