@@ -5,12 +5,18 @@ import * as yup from 'yup';
 
 import './Login.scss';
 import Auth from '../Auth';
+import { useLoginMutation } from '../../../services/apis/auth';
+import { useState } from 'react';
 
 const schema = yup.object({
-  email: yup
+  // email: yup
+  //   .string()
+  //   .email('Please enter a valid email address')
+  //   .required('Email is required'),
+  username: yup
     .string()
-    .email('Please enter a valid email address')
-    .required('Email is required'),
+    .min(6, 'Username must be at least 6 characters long')
+    .required('Username is required'),
   password: yup
     .string()
     .min(6, 'Password must be at least 6 characters long')
@@ -18,7 +24,7 @@ const schema = yup.object({
 }).required();
 
 interface IFormInput {
-  email: string;
+  username: string;
   password: string;
 }
 
@@ -32,26 +38,61 @@ const Login = () => {
   });
 
   const navigate = useNavigate();
+  const [login, { isLoading, error }] = useLoginMutation();
 
-  const onSubmit = (data: IFormInput) => {
+
+  const [username, setUsername] = useState('tuditech'); // Initial state for username
+  const [password, setPassword] = useState('Tuditech@24'); // Initial state for password
+
+  const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+
+  const onSubmit = async (data: IFormInput) => {
     console.log('Form Submitted', data);
-    // handle login logic here (e.g., API call)
-    navigate('/verify');
+
+    try {
+      const result = await login({ userName: data.username, password: data.password }).unwrap();
+      // If successful, you can handle the token or navigate
+
+      if (result.status == 200) {
+        navigate('/verify');
+      } else {
+        alert(result.message)
+      }
+    } catch (err) {
+      // The error will be handled automatically by the "error" state returned by the mutation
+      console.error('Login failed:', err);
+    }
   };
 
   return (
     <Auth title="Welcome Back" subtitle="Please login to your account">
       <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
-          <label htmlFor="email">Email</label>
+          {/* <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
             {...register('email')}
             placeholder="Enter your email"
+            value={"tuditech"}
           />
-          {/* Show error message inside a div below the input field */}
-          {errors.email && <div className="error-message">{errors.email.message}</div>}
+          {errors.email && <div className="error-message">{errors.email.message}</div>} */}
+          <label htmlFor="username">Username</label>
+          <input
+            type="string"
+            id="username"
+            {...register('username')}
+            placeholder="Enter your username"
+            value={username}
+            onChange={handleUsernameChange}
+          />
+          {errors.username && <div className="error-message">{errors.username.message}</div>}
         </div>
 
         <div className="form-group">
@@ -61,13 +102,17 @@ const Login = () => {
             id="password"
             {...register('password')}
             placeholder="Enter your password"
+            value={password}
+            onChange={handlePasswordChange}
           />
           {/* Show error message inside a div below the input field */}
           {errors.password && <div className="error-message">{errors.password.message}</div>}
         </div>
 
         <button type="submit" className="submit-btn">Login</button>
-
+        <div>
+          {JSON.stringify(error)}
+        </div>
         {/* Register button */}
         <div className="register-link">
           <button
