@@ -28,7 +28,23 @@ app.use(cors({
 
 app.get('/api/orders', (_req: Request, res: Response) => {
     // Respond with the orders array in JSON format
-    res.json(orders);
+    setTimeout(() => {
+        res.json(orders);
+    }, 2000); // Delay of 2000 milliseconds (2 seconds)
+});
+
+app.post('/api/auth/login', (_req: Request, res: Response) => {
+    // Respond with the orders array in JSON format
+    setTimeout(() => {
+        res.json({ status: 200, message: 'Login Success!' });
+    }, 2000); // Delay of 2000 milliseconds (2 seconds)
+});
+
+app.post('/api/auth/verify', (_req: Request, res: Response) => {
+    // Respond with the orders array in JSON format
+    setTimeout(() => {
+        res.json({ status: 200, message: 'Verify Success!' });
+    }, 2000); // Delay of 2000 milliseconds (2 seconds)
 });
 
 // Start the server

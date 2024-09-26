@@ -7,6 +7,7 @@ import './Login.scss';
 import Auth from '../Auth';
 import { useLoginMutation } from '../../../services/apis/auth';
 import { useState } from 'react';
+import Loader from '../../../components/loader/Loader';
 
 const schema = yup.object({
   // email: yup
@@ -60,7 +61,7 @@ const Login = () => {
       // If successful, you can handle the token or navigate
 
       if (result.status == 200) {
-        navigate('/verify');
+        navigate("/verify", { state: { fromLogin: true } });
       } else {
         alert(result.message)
       }
@@ -110,6 +111,7 @@ const Login = () => {
         </div>
 
         <button type="submit" className="submit-btn">Login</button>
+        {isLoading && <Loader />}
         <div>
           {JSON.stringify(error)}
         </div>

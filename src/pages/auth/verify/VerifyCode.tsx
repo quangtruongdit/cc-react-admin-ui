@@ -1,9 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import Auth from "../Auth";
 import "./verify_code.scss";
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useVerifyMutation } from '../../../services/apis/auth';
+import Loader from "../../../components/loader/Loader";
 
 interface IFormInput {
     code: string;
@@ -26,12 +28,32 @@ const VerifyCode = () => {
     });
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const fromLogin = location.state?.fromLogin;
 
-    const onSubmit = (data: IFormInput) => {
+    const [verify, { isLoading, error }] = useVerifyMutation();
+
+    const onSubmit = async (data: IFormInput) => {
         console.log('Form Submitted', data);
-        // handle login logic here (e.g., API call)
-        navigate('/');
+        try {
+            const result = await verify({ code: data.code }).unwrap();
+            // If successful, you can handle the token or navigate
+
+            if (result.status == 200) {
+                navigate('/');
+            } else {
+                alert(result.message)
+            }
+        } catch (err) {
+            // The error will be handled automatically by the "error" state returned by the mutation
+            console.error('Verify failed:', err);
+        }
     };
+
+    if (!fromLogin) {
+        // Redirect back to login if not coming from the login screen
+        return <Navigate to="/login" replace />;
+    }
 
     return (
         <>
@@ -48,6 +70,11 @@ const VerifyCode = () => {
                         {/* Show error message inside a div below the input field */}
                         {errors.code && <div className="error-message">{errors.code.message}</div>}
                     </div>
+                    <button type="submit" className="submit-btn">Submit</button>
+                    {isLoading && <Loader />}
+                    {<div>
+                        {JSON.stringify(error)}
+                    </div>}
                 </form>
             </Auth>
         </>

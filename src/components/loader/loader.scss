@@ -1,0 +1,27 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Ensures it takes up the full width of the parent */
+    height: 100%;
+    /* Ensures it takes up the full height of the parent */
+}
+
+.spinner {
+    border: 0.2em solid rgba(0, 0, 0, 0.1);
+    /* Use relative units for responsive design */
+    border-top-color: #3498db;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
