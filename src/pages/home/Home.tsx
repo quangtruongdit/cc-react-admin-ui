@@ -8,10 +8,10 @@ const BarChartBox = React.lazy(() => import('../../components/barChartBox/BarCha
 
 import {
   barChartBoxRevenue,
-  barChartBoxVisit,
-  chartBoxConversion,
+  // barChartBoxVisit,
+  // chartBoxConversion,
   chartBoxProduct,
-  chartBoxRevenue,
+  // chartBoxRevenue,
   chartBoxUser,
 } from "../../data";
 import "./home.scss";
