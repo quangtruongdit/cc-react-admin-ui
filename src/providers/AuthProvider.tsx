@@ -28,17 +28,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         // Check if the user is authenticated by calling an API endpoint
         const checkAuth = async () => {
             try {
-                // const response = await fetch('/api/check-auth', {
-                //     credentials: 'include', // Include cookies
-                // });
-                // if (response.ok) {
-                //     setIsAuthenticated(true);
-                // } else {
-                //     setIsAuthenticated(false);
-                // }
-                setUser({ id: '', name: '', role: 'user' })
-                setIsAuthenticated(true);
+                const response = await fetch('/api/check-auth', {
+                    credentials: 'include', // Include cookies
+                });
+                if (response.ok) {
+                    setUser({ id: '', name: '', role: 'user' })
+                    setIsAuthenticated(true);
+                } else {
+                    setUser(null)
+                    setIsAuthenticated(false);
+                }
             } catch (error) {
+                setUser(null)
                 setIsAuthenticated(false);
             }
         };
