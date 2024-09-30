@@ -41,7 +41,6 @@ const Login = () => {
   const navigate = useNavigate();
   const [login, { isLoading, error }] = useLoginMutation();
 
-
   const [username, setUsername] = useState('tuditech'); // Initial state for username
   const [password, setPassword] = useState('Tuditech@24'); // Initial state for password
 
@@ -112,9 +111,9 @@ const Login = () => {
 
         <button type="submit" className="submit-btn">Login</button>
         {isLoading && <Loader />}
-        <div>
+        {/* <div className="error-message">
           {JSON.stringify(error)}
-        </div>
+        </div> */}
         {/* Register button */}
         <div className="register-link">
           <button

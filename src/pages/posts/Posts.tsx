@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPosts, selectAllPosts, selectPostsStatus, selectPostsError } from '../../services/apis/posts';
-import type { AppDispatch } from '../../redux/store';
 import SinglePost from '../../components/post/SinglePost';
 import "./posts.scss";
 
-export const useAppDispatch = () => useDispatch<AppDispatch>();
+export const useAppDispatch = () => useDispatch<any>();
 
 const Posts = () => {
     // Get the dispatch function from Redux

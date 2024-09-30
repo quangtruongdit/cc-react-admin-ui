@@ -1,6 +1,6 @@
 // src/services/ordersApi.ts
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { orders } from '../../data';
+// import { orders } from '../../data';
 
 interface Order {
     id: number;

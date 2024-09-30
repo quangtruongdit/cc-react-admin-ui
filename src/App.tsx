@@ -29,6 +29,7 @@ import { AuthProvider } from "./providers/AuthProvider";
 import AuthenticatedRoute from "./components/auth/AuthenticationRoute";
 import ForgotPassword from "./pages/auth/forgotpassword/ForgotPassword";
 import VerifyCode from "./pages/auth/verify/VerifyCode";
+import { ErrorProvider } from "./providers/ErrorProvider";
 
 const queryClient = new QueryClient();
 
@@ -121,11 +122,13 @@ function App() {
     <Provider store={store}>
       <ErrorBoundary fallback={<UnknownError />}>
         <ThemeProvider>
-          <AuthProvider>
-            <div>
-              <RouterProvider router={router} />
-            </div>
-          </AuthProvider>
+          <ErrorProvider>
+            <AuthProvider>
+              <div>
+                <RouterProvider router={router} />
+              </div>
+            </AuthProvider>
+          </ErrorProvider>
         </ThemeProvider>
       </ErrorBoundary>
     </Provider>

@@ -72,9 +72,9 @@ const VerifyCode = () => {
                     </div>
                     <button type="submit" className="submit-btn">Submit</button>
                     {isLoading && <Loader />}
-                    {<div>
+                    {/* {<div>
                         {JSON.stringify(error)}
-                    </div>}
+                    </div>} */}
                 </form>
             </Auth>
         </>
