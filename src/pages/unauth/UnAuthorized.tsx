@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 import Auth from "../auth/Auth"
 
-const NotFound = () => {
+export const UnAuthorized = () => {
     return (
         <>
-            <Auth title="Not found" subtitle="Your page is not found">
+            <Auth title="UnAuthorized" subtitle="Please login with admin role">
                 <div
                     style={{
                         marginTop: '0px',
@@ -12,11 +12,9 @@ const NotFound = () => {
                         justifyContent: 'center', // Align to the right
                     }}
                 >
-                    <Link to="/">Back</Link>
+                    <Link to="/login">Login</Link>
                 </div>
             </Auth>
         </>
     )
 }
-
-export default NotFound;

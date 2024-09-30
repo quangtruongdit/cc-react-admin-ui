@@ -30,6 +30,8 @@ import AuthenticatedRoute from "./components/auth/AuthenticationRoute";
 import ForgotPassword from "./pages/auth/forgotpassword/ForgotPassword";
 import VerifyCode from "./pages/auth/verify/VerifyCode";
 import { ErrorProvider } from "./providers/ErrorProvider";
+import ProtectedRoute from "./components/protected/ProtectedRoute";
+import { UnAuthorized } from "./pages/unauth/UnAuthorized";
 
 const queryClient = new QueryClient();
 
@@ -68,7 +70,7 @@ function App() {
         },
         {
           path: "/users",
-          element: <AuthenticatedRoute element={<Users />} />,
+          element: <ProtectedRoute roles={['admin']} element={<Users />} />,
         },
         {
           path: "/products",
@@ -111,6 +113,10 @@ function App() {
     {
       path: "/verify",
       element: <VerifyCode />,
+    },
+    {
+      path: "/unauthorized",
+      element: <UnAuthorized />,
     },
     {
       path: "*",

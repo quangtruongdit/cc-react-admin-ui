@@ -8,9 +8,9 @@ interface AuthenticatedRouteProps {
 }
 
 const AuthenticatedRoute: React.FC<AuthenticatedRouteProps> = ({ element: Component, redirectTo = '/login' }) => {
-    const { isAuthenticated } = useAuth();
+    const { user } = useAuth();
 
-    return isAuthenticated ? Component : <Navigate to={redirectTo} />;
+    return user ? Component : <Navigate to={redirectTo} />;
 };
 
 export default AuthenticatedRoute;

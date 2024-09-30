@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { User } from '../models/roles';
 
 interface AuthContextType {
-    isAuthenticated: boolean;
-    setIsAuthenticated: (isAuthenticated: boolean) => void;
+    user: User | null;
+    setUser: (user: User) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -21,6 +22,7 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
         // Check if the user is authenticated by calling an API endpoint
@@ -34,6 +36,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
                 // } else {
                 //     setIsAuthenticated(false);
                 // }
+                setUser({ id: '', name: '', role: 'user' })
                 setIsAuthenticated(true);
             } catch (error) {
                 setIsAuthenticated(false);
@@ -44,7 +47,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
+        <AuthContext.Provider value={{ user, setUser }}>
             {children}
         </AuthContext.Provider>
     );
