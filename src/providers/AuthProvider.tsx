@@ -21,7 +21,7 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [, setIsAuthenticated] = useState<boolean>(false);
     const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {

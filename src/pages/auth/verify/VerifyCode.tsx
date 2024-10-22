@@ -31,7 +31,7 @@ const VerifyCode = () => {
     const location = useLocation();
     const fromLogin = location.state?.fromLogin;
 
-    const [verify, { isLoading, error }] = useVerifyMutation();
+    const [verify, { isLoading }] = useVerifyMutation();
 
     const onSubmit = async (data: IFormInput) => {
         console.log('Form Submitted', data);

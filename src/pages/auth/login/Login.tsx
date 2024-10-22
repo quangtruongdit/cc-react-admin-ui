@@ -39,7 +39,7 @@ const Login = () => {
   });
 
   const navigate = useNavigate();
-  const [login, { isLoading, error }] = useLoginMutation();
+  const [login, { isLoading }] = useLoginMutation();
 
   const [username, setUsername] = useState('tuditech'); // Initial state for username
   const [password, setPassword] = useState('Tuditech@24'); // Initial state for password

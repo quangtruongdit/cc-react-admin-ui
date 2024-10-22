@@ -27,9 +27,9 @@ export const ErrorProvider = ({ children }: { children: ReactNode }) => {
 
     const dispatch = useDispatch();
 
-    const handleCloseError = () => {
-        dispatch(clearError()); // Clear error when the user closes the message
-    };
+    // const handleCloseError = () => {
+    //     dispatch(clearError()); // Clear error when the user closes the message
+    // };
 
     useEffect(() => {
         let timeoutId: NodeJS.Timeout;

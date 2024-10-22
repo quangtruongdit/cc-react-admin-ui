@@ -2,6 +2,7 @@
 // import DemoProfiler from "./advances/DemoProfiler";
 // import DemoCSSComponent from "./components/css/DemoCSSComponent";
 // import DemoClassComponent from "./components/DemoClassComponent";
+// import DemoRoutingWithNavlink from "./routing/DemoRoutingWithNavlink";
 // import DemoControlledComponent from "./components/DemoControlledComponent";
 // import DemoFuncAsChildComponent from "./components/DemoFuncAsChildComponent";
 // import DemoFuncAsPropComponent from "./components/DemoFuncAsPropComponent";
@@ -23,8 +24,8 @@ const DemoPage = () => {
     return (
         <>
             {/* Demo components */}
-            {/* <DemoClassComponent />
-            <DemoFuncAsPropComponent />
+            {/* <DemoClassComponent /> */}
+            {/* <DemoFuncAsPropComponent />
             <DemoFuncAsChildComponent />
             <DemoLiftingStateUpComponent /> */}
             {/* Demo State */}
