@@ -1,7 +1,7 @@
 // ProductCard.tsx
 import React from 'react';
 // import './DemoCSSProductCard.css';
-import './DemoSCSSProductCard.scss'
+import './demoSCSSProductCard.scss'
 
 interface DemoProductCardProps {
     image: string;

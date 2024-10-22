@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import './ForgotPassword.scss'; // Optional: Your custom styles
+import './forgotPassword.scss'; // Optional: Your custom styles
 import { Link, useNavigate } from 'react-router-dom';
 import Auth from '../Auth';
 

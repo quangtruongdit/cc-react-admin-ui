@@ -1,5 +1,5 @@
 import React from 'react';
-import './Auth.scss'; // Import shared styles
+import './auth.scss'; // Import shared styles
 
 interface AuthProps {
     title: string;

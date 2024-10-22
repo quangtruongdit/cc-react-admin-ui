@@ -46,12 +46,27 @@ http://localhost:8080
 
 1. Create Dockerfile as in repository.
 2. Dockerize iamge
+
+- Build client
 ```bash
-docker build -t cc-react-admin-ui:latest .
+docker build -t cc-react-admin-client:latest .
 ```
+
+- The client need a server then build server:
+```bash
+docker build -t cc-react-admin-server:latest . -f Dockerfile.server
+```
+
+Notes:
+- Check port run server and client. For now client is at 8000, server is at 3000.
+
 3. Run docker image
 ```bash
-docker run -d -p 5173:5173 cc-react-admin-ui:latest
+docker run -d -p 3000:3000 cc-react-admin-server:latest
+```
+
+```bash
+docker run -d -p 8000:8000 cc-react-admin-client:latest
 ```
 
 # Deploy to Github

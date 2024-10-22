@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import './Login.scss';
+import './login.scss';
 import Auth from '../Auth';
 import { useLoginMutation } from '../../../services/apis/auth';
 import { useState } from 'react';

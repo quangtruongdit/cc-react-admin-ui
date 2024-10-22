@@ -1,7 +1,7 @@
 import DataTable from '../../components/dataTable/DataTable';
 import { GridColDef } from '@mui/x-data-grid';
 // import { useOrders } from '../../hooks/useOrders';
-import './Orders.scss';
+import './orders.scss';
 import { useGetOrdersQuery } from '../../services/apis/orders';
 
 const columns: GridColDef[] = [

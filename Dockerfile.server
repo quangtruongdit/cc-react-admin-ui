@@ -19,8 +19,8 @@ RUN npm install
 COPY . .
 
 # Exposes the port to access the app from outside the container i.e from the browser
-EXPOSE 8000
+EXPOSE 3000
 
 # Starting our application
 # CMD ["npm", "start"]
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev:server"]
